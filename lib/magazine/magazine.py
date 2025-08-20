@@ -42,9 +42,3 @@ class Magazine:
         authors = [a.author for a in self.articles()]
         result = [auth for auth in set(authors) if authors.count(auth) > 2]
         return result if result else None
-
-    @classmethod
-    def top_publisher(cls):
-        if not Article.all:
-            return None
-        return max(cls.all, key=lambda mag: len(mag.articles()))

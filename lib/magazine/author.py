@@ -5,7 +5,7 @@ class Author:
     def __init__(self, name):
         if not isinstance(name, str) or len(name) == 0:
             raise Exception("Author name must be a non-empty string")
-        if hasattr(self, "_name"):  # Prevent changes
+        if hasattr(self, "_name"):
             raise Exception("Name cannot be changed after initialization")
         self._name = name
 
@@ -25,3 +25,6 @@ class Author:
     def topic_areas(self):
         mags = self.magazines()
         return list({mag.category for mag in mags}) if mags else None
+
+
+    author1 = Author
